@@ -7,6 +7,7 @@ import { ContextGlobal } from '../Components/utils/global.context'
 
 const Contact = () => {
   const { Theme } = useContext(ContextGlobal);
+  console.log("Entro aqui");
   return (
     <div style={{background:Theme.backgroundHome, color:Theme.color}}>
       <h2>¿Deseas saber más?</h2>
