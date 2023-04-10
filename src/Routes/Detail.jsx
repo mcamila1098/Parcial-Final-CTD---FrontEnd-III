@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import { useContext } from 'react'
-import { ContextGlobal } from '../Components/utils/global.context'
+//import { ContextGlobal } from '../Components/utils/global.context'
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Detail = () => {
 
-  const { Theme } = useContext(ContextGlobal)
+  //const { Theme } = useContext(ContextGlobal)
 
   const params = useParams();
   const [datosDentista, setDatosDentista] = useState({});
@@ -27,7 +27,8 @@ const Detail = () => {
   )
 
   return (
-    <div style={{background:Theme.backgroundHome, color:Theme.color}}>
+    // <div style={{background:Theme.backgroundHome, color:Theme.color}}>
+    <div>
       <h1>Detail Dentist id </h1>
       {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
       {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}

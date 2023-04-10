@@ -1,5 +1,5 @@
-import { createContext } from "react";
-import { useState } from "react";
+import React, { createContext, useReducer } from "react";
+// import { useState } from "react";
 
 /* export const initialState = {theme: "", data: []}
 
@@ -26,7 +26,7 @@ export const ContextProvider = ({ children }) => {
   );
 }; */
 
-export const initialState = {
+/* export const initialState = {
   themes: {
       light: {
           backgroundNavbar:"rgb(223, 219, 219)",
@@ -64,9 +64,30 @@ export const ContextProvider = ({ children }) => { // Exporta provider del conte
             {children}
         </ContextGlobal.Provider>
     );
+}; */
+
+export const ThemeContext = createContext();
+
+const initialState = {
+  darkMode: false,
 };
 
+const themeReducer = (state, action) => {
+  switch (action.type) {
+    case "LIGHTMODE":
+      return { darkMode: false };
+    case "DARKMODE":
+      return { darkMode: true };
+    default:
+      return state;
+  }
+};
 
+export function ThemeProvider({children}) {
+  const [state, dispatch] = useReducer(themeReducer, initialState);
+
+  return <ThemeContext.Provider value={{ state, dispatch }}>{children}</ThemeContext.Provider>;
+}
 
 
 

@@ -7,24 +7,27 @@ import Inicio from './Routes/Home'
 import Contacto from './Routes/Contact'
 import Favs from './Routes/Favs'
 import Detail from './Routes/Detail'
-import { ContextProvider } from './Components/utils/global.context';
+//import { ContextProvider, ThemeProvider } from './Components/utils/global.context';
+import { ThemeProvider } from './Components/utils/global.context';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ContextProvider>
+    {/* <ContextProvider> */}
+    <ThemeProvider>
       <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<App/>} >
-          <Route path='home' element={<Inicio/>} />
-          <Route path='contacto' element={<Contacto/>} />
-          <Route path='favs' element={<Favs/>} />
-          <Route path='dentist/:id' element={<Detail/>} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-    </ContextProvider>
+        <Routes>
+          <Route path='/' element={<App/>} >
+            <Route path='home' element={<Inicio/>} />
+            <Route path='contacto' element={<Contacto/>} />
+            <Route path='favs' element={<Favs/>} />
+            <Route path='dentist/:id' element={<Detail/>} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </ThemeProvider>
+    {/* </ContextProvider> */}
   </React.StrictMode>
 );
 
