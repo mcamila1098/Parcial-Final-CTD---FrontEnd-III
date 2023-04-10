@@ -1,8 +1,12 @@
-import React from 'react'
-
+import React, { useContext } from 'react'
+import { ThemeContext } from './utils/global.context';
 const Footer = () => {
+
+  const theme = useContext(ThemeContext);
+  const darkMode = theme.state.darkMode;
+
   return (
-    <footer>
+    <footer className={`${darkMode ? "dark-footer" : "footer" }`}>
         <p>Powered by</p>
         <img src='/images/DH.png' alt='DH-logo' />
     </footer>

@@ -1,13 +1,10 @@
 import React, { useEffect, useState, useContext } from 'react'
 import Card from '../Components/Card'
-//import { ContextGlobal } from '../Components/utils/global.context'
 import { ThemeContext } from '../Components/utils/global.context'
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Home = () => {
-
-  //const { Theme } = useContext(ContextGlobal);
 
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
@@ -28,8 +25,7 @@ const Home = () => {
   )
 
   return (
-    // <main className="" style={{background:Theme?.backgroundHome, color:Theme?.color}}>
-    <main className={`bg ${darkMode ? "bg-dark" : "bg-light"}`}>
+    <main className={`${darkMode ? "dark" : "main"}`}>
       <h1>Home</h1>
       <div className='card-grid'>
         {/* Aqui deberias renderizar las cards */}

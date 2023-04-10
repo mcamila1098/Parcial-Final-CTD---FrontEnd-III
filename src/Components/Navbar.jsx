@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { ThemeContext } from "./utils/global.context";
 import {Link} from 'react-router-dom';
 //import { GlobalState } from './utils/global.context';
@@ -7,19 +7,6 @@ import {Link} from 'react-router-dom';
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Navbar = () => {
-
-  /* const { Theme, handleThemeChange } = useContext(ContextGlobal)
-
-  return (
-    <nav>
-      /* Aqui deberan agregar los liks correspondientes a las rutas definidas 
-      <Link to ="/home">Home</Link>
-      <Link to="/contacto">Contacto</Link>
-      <Link to="/favs">Destacados</Link>
-      /* Deberan implementar ademas la logica para cambiar de Theme con el button 
-      <button onClick={handleThemeChange}>Cambiar Tema</button>
-    </nav>
-  ) */
 
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
@@ -33,12 +20,18 @@ const Navbar = () => {
   };
 
   return (
-    <nav>
-      <Link to ="/home">Home</Link>
-      <Link to="/contacto">Contacto</Link>
-      <Link to="/favs">Destacados</Link>
-      <button onClick={onClick}>Cambiar Tema</button>
-    </nav>
+        <nav className={`${darkMode ? "dark-nav" : "nav"}`}>
+        <span>
+          <strong>D</strong>
+          H Odonto
+        </span>
+          <Link to ="/home" className='link-nav'>Home</Link>
+          <Link to="/contacto" className='link-nav'>Contacto</Link>
+          <Link to="/favs" className='link-nav'>Destacados</Link>
+          <button onClick={onClick} className='button-nav'>
+            {darkMode ? "🌞" : "🌛"}  
+          </button>
+      </nav>
   );
 }
 

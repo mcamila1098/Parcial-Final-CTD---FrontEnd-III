@@ -1,14 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Form from '../Components/Form'
-import { useContext } from 'react'
-import { ContextGlobal } from '../Components/utils/global.context'
+import { ThemeContext } from '../Components/utils/global.context'
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Contact = () => {
+
+  const theme = useContext(ThemeContext);
+  const darkMode = theme.state.darkMode;
   
   return (
-    <div>
+    <div className={`${darkMode ? "dark" : "div"}`}>
       <h2>¿Deseas saber más?</h2>
       <p>Envíanos tus preguntas y con gusto te contactaremos</p>
       <Form/>
