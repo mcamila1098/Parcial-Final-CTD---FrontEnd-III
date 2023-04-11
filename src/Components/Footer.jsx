@@ -6,7 +6,7 @@ const Footer = () => {
   const darkMode = theme.state.darkMode;
 
   return (
-    <footer className={`${darkMode ? "dark-footer" : "footer" }`}>
+    <footer className={`${darkMode ? "dark-footer" : "" }`}>
         <p>Powered by</p>
         <img src='/images/DH.png' alt='DH-logo' />
     </footer>

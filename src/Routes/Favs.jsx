@@ -12,7 +12,7 @@ const Favs = () => {
 
   return (
     // <div style={{background:Theme.backgroundHome, color:Theme.color}}>
-    <div className={`${darkMode ? "dark" : "main"}`}>
+    <div className={`${darkMode ? "dark" : ""}`}>
       <h1>Dentists Favs</h1>
       <div className="card-grid">
         {/* este componente debe consumir los destacados del localStorage */}

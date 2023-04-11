@@ -9,11 +9,9 @@ function App() {
   return (
     // <ContextProvider>
     <ThemeProvider>
-      <div className="App">
-          <Navbar/>
-          <Outlet />
-          <Footer/>
-      </div>
+      <Navbar/>
+      <Outlet />
+      <Footer/>
     </ThemeProvider>
       
     // </ContextProvider>   

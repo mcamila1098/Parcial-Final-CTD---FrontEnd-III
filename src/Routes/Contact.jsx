@@ -10,10 +10,11 @@ const Contact = () => {
   const darkMode = theme.state.darkMode;
   
   return (
-    <div className={`${darkMode ? "dark" : "div"}`}>
+    <div className={`${darkMode ? "dark" : ""}`}>
       <h2>¿Deseas saber más?</h2>
       <p>Envíanos tus preguntas y con gusto te contactaremos</p>
       <Form/>
+      <br/><br/>
     </div>
   )
 }

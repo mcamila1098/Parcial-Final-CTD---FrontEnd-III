@@ -20,7 +20,7 @@ const Navbar = () => {
   };
 
   return (
-        <nav className={`${darkMode ? "dark-nav" : "nav"}`}>
+        <nav className={`${darkMode ? "dark-nav" : ""}`}>
         <span>
           <strong>D</strong>
           H Odonto
